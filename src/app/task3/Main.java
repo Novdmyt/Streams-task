@@ -2,6 +2,7 @@ package app.task3;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Stream;
 
 public class Main {
 
@@ -16,4 +17,8 @@ public class Main {
         week.put("Sunday", 14);
         return week;
     }
+    private static Stream<Map.Entry<String, Integer>> filterProducts(Stream<Map.Entry<String, Integer>> products) {
+        return products.filter(day -> day.getValue() >= 10 && day.getValue() <= 13);
+    }
+
 }
