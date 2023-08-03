@@ -21,12 +21,12 @@ public class Main {
     }
 
     public static Stream<Map.Entry<String, Double>> filterProducts(Stream<Map.Entry<String, Double>> products) {
-        return products.filter(entry -> entry.getValue() <= 2);
+        return products.filter(entry -> entry.getValue() <= 2.00);
     }
     private static void getOutput(Stream<Map.Entry<String, Double>> products) {
         AtomicInteger counter = new AtomicInteger(1);
         products.forEach(entry -> System.out.println(counter.getAndIncrement() + ") "
-                + entry.getKey() + " - $" + entry.getValue()));
+                + entry.getKey() + " - $ " + entry.getValue()));
     }
 
 }
