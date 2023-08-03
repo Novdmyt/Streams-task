@@ -6,6 +6,12 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Stream;
 
 public class Main {
+    public static void main(String[] args) {
+        List<String> names = listOfNames();
+        char targetLetter = 'A';
+        Stream<String> filterNames = filterNames(names.stream(), targetLetter);
+        printNames(filterNames);
+    }
 
    public static List<String> listOfNames() {
         return Arrays.asList("Alice", "Bob", "Charlie", "Daniel", "Eva", "Frank", "Gina", "Hanna", "Alex","Arina");
