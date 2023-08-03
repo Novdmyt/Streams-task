@@ -5,6 +5,10 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Stream;
 public class Main {
+    public static void main(String[] args) {
+
+        getOutput(filterProducts(getProducts().entrySet().stream()));
+    }
     public static Map<String, Double> getProducts() {
         Map<String, Double> products = new HashMap<>();
         products.put("Tomato", 2.50);
