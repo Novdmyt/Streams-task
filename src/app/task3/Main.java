@@ -6,6 +6,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Stream;
 
 public class Main {
+    public static void main(String[] args) {
+
+        getOutput(filterProducts(getWeek().entrySet().stream()));
+    }
 
     public static Map<String, Integer> getWeek(){
         Map<String,Integer> week = new HashMap<>();
