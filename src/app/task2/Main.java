@@ -2,6 +2,7 @@ package app.task2;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Stream;
 public class Main {
     public static Map<String, Double> getProducts() {
@@ -18,4 +19,10 @@ public class Main {
     public static Stream<Map.Entry<String, Double>> filterProducts(Stream<Map.Entry<String, Double>> products) {
         return products.filter(entry -> entry.getValue() <= 2);
     }
+    private static void getOutput(Stream<Map.Entry<String, Double>> products) {
+        AtomicInteger counter = new AtomicInteger(1);
+        products.forEach(entry -> System.out.println(counter.getAndIncrement() + ") "
+                + entry.getKey() + " - $" + entry.getValue()));
+    }
+
 }
